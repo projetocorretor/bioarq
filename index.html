@@ -25,7 +25,7 @@
     }
   </style>
 
-  <title>Bioart</title>
+  <title>Bioarq</title>
 </head>
 
 <body>
@@ -165,22 +165,25 @@
         </div>
         <div>
           <p class="text-md font-normal text-white text-center">Registre o seu interesse através do formulário:</p>
-          <form class="w-full rounded-[20px] bg-[#f60] p-10 flex flex-col items-center">
+          <form class="w-full rounded-[20px] bg-[#f60] p-10 flex flex-col items-center" id="form">
+            <p class="text-center text-gray-600 text-md" id="error_msg">Campo em branco!</p>
+            <p class="text-center text-[#29ca46] text-md" id="success_msg">Enviado com sucesso!</p>
             <div class="w-full">
               <label for="" class="text-md font-semibold text-white">Nome</label>
               <input type="text"
-                class="outline-none border-none w-full rounded bg-white text-sm h-[40px] text-gray-500 px-3" />
+                class="outline-none border-none w-full rounded bg-white text-sm h-[40px] text-gray-500 px-3"
+                id="name" />
               <p class="text-sm mt-2 font-normal text-white">Como gostaria de ser chamado?</p>
             </div>
             <div class="w-full mt-5">
               <label for="" class="text-md font-semibold text-white">Fone|WhatsApp</label>
-              <input type="text"
+              <input type="text" id="phone"
                 class="outline-none border-none w-full rounded bg-white text-sm h-[40px] text-gray-500 px-3" />
               <p class="text-sm mt-2 font-normal text-white">Seu número de telefone ou whatsapp.</p>
             </div>
             <div class="w-full mt-5">
               <label for="" class="text-md font-semibold text-white">Email</label>
-              <input type="email"
+              <input type="email" id="email"
                 class="outline-none border-none w-full rounded bg-white text-sm h-[40px] text-gray-500 px-3" />
               <p class="text-sm mt-2 font-normal text-white">Aqui seu melhor email.</p>
             </div>
@@ -188,15 +191,15 @@
               <label for="" class="text-md font-semibold text-white">Prefere ser contatado por:</label>
               <div class="flex flex-col">
                 <label class="text-white mt-2">
-                  <input type="radio" name="radio" class="form-radio" value="WhatsApp">
+                  <input type="radio" name="radio" class="form-radio" value="WhatsApp" id="is_wz">
                   <span class="ml-2">WhatsApp</span>
                 </label>
                 <label class="text-white">
-                  <input type="radio" name="radio" class="form-radio" value="Ligação Telefônica">
+                  <input type="radio" name="radio" class="form-radio" value="Ligação Telefônica" id="is_phone">
                   <span class="ml-2">Ligação Telefônica</span>
                 </label>
                 <label class="text-white">
-                  <input type="radio" name="radio" class="form-radio" value="Email">
+                  <input type="radio" name="radio" class="form-radio" value="Email" id="is_mail">
                   <span class="ml-2">Email</span>
                 </label>
               </div>
@@ -286,10 +289,13 @@
     </a>
   </div>
 
+
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Magnific Pop up -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <!-- Mask -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   <!-- Swipper -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="./js/swiper.js"></script>
@@ -298,6 +304,8 @@
       $('.image-link').magnificPopup({ type: 'image' })
     })
   </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="./js/form.js"></script>
 </body>
 
 </html>
