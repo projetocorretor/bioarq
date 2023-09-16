@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  emailjs.init('9-06hbeQUHZwX9jWG')
+  emailjs.init('-tEeEkGS-yfpbQMUa')
 
   const errorMsg = $('#error_msg').hide()
   const successMsg = $('#success_msg').hide()
@@ -8,7 +8,6 @@ $(document).ready(function () {
 
   $('#form').on('submit', (e) => {
     e.preventDefault()
-
 
     const name = $('#name').val()
     const phone = $('#phone').val()
@@ -43,7 +42,7 @@ $(document).ready(function () {
       celphone: phone,
       prefence_contact
     }
-    emailjs.send('bioarq-contato', 'teste-me', formParams)
+    emailjs.send('bioarq', 'contato-bioarq', formParams)
       .then(function () {
         successMsg.show()
       }, function (error) {
