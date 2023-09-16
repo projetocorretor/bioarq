@@ -4,7 +4,7 @@ $(document).ready(function () {
   const errorMsg = $('#error_msg').hide()
   const successMsg = $('#success_msg').hide()
 
-  $('#phone').mask('(00) 0000-0000');
+  $('#phone').mask('(00) 00000-0000');
 
   $('#form').on('submit', (e) => {
     e.preventDefault()
