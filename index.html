@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Projeto do imóvel bioarq localizado na rua pinheiros em São Paulo">
 
+  <!-- video -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
   <!-- Magnific Pop Up -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
   <!-- Swiper -->
@@ -55,10 +57,11 @@
           </p>
         </div>
       </div>
-      <iframe src="https://1drv.ms/v/s!AqN_iasCYG3LowLmWzAWoMwdJdhf?e=fBYGyl"
-        title="Video sobre o imóvel bioarq na rua dos pinheiros" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen class="border-none h-[650px] max-md:h-[400px] max-sm:h-[300px] w-full mx-auto mt-20"></iframe>
+      <div class="w-full mt-20">
+        <video id="video" controls class="border-none h-[650px] max-md:h-[400px] max-sm:h-[300px] w-full mx-auto">
+          <source src="./assets/videos/video.mp4" type="video/mp4">
+        </video>
+      </div>
 
       <a href="https://api.whatsapp.com/send?phone=5511919986916&text=Ol%C3%A1.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20BioArq."
         target="_blank"
@@ -257,9 +260,14 @@
   <!-- Swipper -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="./js/swiper.js"></script>
+  <!-- Video -->
+  <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
   <script>
     $(document).ready(function () {
       $('.image-link').magnificPopup({ type: 'image' })
+
+      const player = new Plyr('#video');
+
     })
   </script>
   <!-- Email Js -->
